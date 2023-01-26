@@ -10,7 +10,8 @@
     "jsx-quotes": [2, "prefer-single"],
     "@typescript-eslint/comma-dangle": "off",
     "react/require-default-props": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "import/no-cycle": "off"
 
   }
 }
