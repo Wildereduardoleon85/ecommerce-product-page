@@ -1,11 +1,16 @@
-// type ProductAction = { type: 'setCounter' }
+import { Image, ProductState } from '../types'
 
-function productReducer(state: any, action: any): any {
+type ProductAction = { type: 'setSelectedImage'; payload: Image }
+
+function productReducer(
+  state: ProductState,
+  action: ProductAction
+): ProductState {
   switch (action.type) {
-    case 'setCounter':
+    case 'setSelectedImage':
       return {
         ...state,
-        counter: state.counter + 1,
+        selectedImage: action.payload,
       }
 
     default:

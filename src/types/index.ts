@@ -1,5 +1,9 @@
-export type Product = {
+export type Image = {
   name: string
-  image: string
-  thumbnailImage: string
+  largeImageUrl: string
+  thumbnailImageUrl: string
+}
+
+export type ProductState = {
+  selectedImage: Image
 }

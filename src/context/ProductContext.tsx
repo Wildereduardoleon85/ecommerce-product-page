@@ -1,10 +1,9 @@
 import { createContext } from 'react'
+import { Image, ProductState } from '../types'
 
 type ProductContextProps = {
-  //     // state
-  //   state: StepState
-  //   // actions
-  //   updateStep: (step: Steps) => void
+  state: ProductState
+  setSelectedImage: (image: Image) => void
 }
 
 const ProductContext = createContext({} as ProductContextProps)

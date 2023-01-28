@@ -3,7 +3,8 @@ import styles from './navbar.module.css'
 import logo from '../../assets/logo.svg'
 import menuIcon from '../../assets/icon-menu.svg'
 import avatarIcon from '../../assets/image-avatar.png'
-import { Cart, CartIcon } from '..'
+import { Cart } from '..'
+import { CartIcon } from '../Icons'
 
 function Navbar() {
   const [showCart, setShowCart] = useState<boolean>(false)

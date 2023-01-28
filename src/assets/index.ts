@@ -6,6 +6,7 @@ import product3 from './image-product-3.jpg'
 import product3Thumbnail from './image-product-3-thumbnail.jpg'
 import product4 from './image-product-4.jpg'
 import product4Thumbnail from './image-product-4-thumbnail.jpg'
+import nextIcon from './icon-next.svg'
 
 export {
   product1,
@@ -16,4 +17,5 @@ export {
   product3Thumbnail,
   product4,
   product4Thumbnail,
+  nextIcon,
 }
