@@ -1,3 +1,5 @@
 export { Cart } from './Cart'
 export { CartIcon } from './Icons'
 export { Navbar } from './Navbar'
+export { ProductImage } from './ProductImage'
+export { ProductDetail } from './ProductDetail'

@@ -1,0 +1,22 @@
+.sneakersImage {
+  border-radius: 1rem;
+}
+
+.thumbnailContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.8rem;
+}
+
+.thumbnail {
+  border-radius: 0.5rem;
+  margin: 0 0.5rem;
+}
+
+.thumbnail:first-child {
+  margin-left: 0;
+}
+
+.thumbnail:last-child {
+  margin-right: 0;
+}

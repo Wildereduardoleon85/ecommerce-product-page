@@ -1,16 +1,12 @@
-import { Navbar } from './components'
+import { Navbar, ProductDetail, ProductImage } from './components'
 
 function App() {
   return (
     <>
       <Navbar />
       <main>
-        {/* <div>
-          <h1>Image Component</h1>
-        </div>
-        <div>
-          <h1>Description component</h1>
-        </div> */}
+        <ProductImage />
+        <ProductDetail />
       </main>
     </>
   )

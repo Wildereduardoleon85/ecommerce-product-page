@@ -30,7 +30,7 @@
   height: 100%;
 }
 
-.navbarContainer button {
+.menuItem {
   background: none;
   outline: none;
   border: none;
@@ -42,15 +42,16 @@
   transition: var(--transition);
 }
 
-.navbarContainer button:hover {
+.menuItem:hover {
   color: var(--veryDarkBlue);
   border-bottom: 0.3rem solid var(--orange);
 }
 
-.navbarContainer > nav > div {
+.cartIconContainerParent {
   margin-left: auto;
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .navbarContainer > nav > div > img {
@@ -66,10 +67,11 @@
 
 .cartIconContainer {
   cursor: pointer;
-  margin-right: 2.5rem;
+  margin-right: 1rem;
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 70px;
+  height: 100%;
+  z-index: 1;
 }
 
 .cartIconContainer > div {
@@ -78,8 +80,8 @@
   width: 18px;
   background-color: var(--orange);
   border-radius: 10px;
-  top: 0;
-  right: 0;
+  top: 45px;
+  right: 18px;
   font-size: 0.7rem;
   color: white;
   display: flex;

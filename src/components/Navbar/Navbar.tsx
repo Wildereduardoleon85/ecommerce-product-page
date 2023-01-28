@@ -16,8 +16,6 @@ function Navbar() {
     setShowCart(false)
   }
 
-  console.log(showCart)
-
   return (
     <header className={styles.navbarContainer}>
       <nav>
@@ -25,22 +23,32 @@ function Navbar() {
         <img src={logo} alt='logo' width={138} height={20} />
         <ul>
           <li>
-            <button type='button'>Collections</button>
+            <button className={styles.menuItem} type='button'>
+              Collections
+            </button>
           </li>
           <li>
-            <button type='button'>Men</button>
+            <button className={styles.menuItem} type='button'>
+              Men
+            </button>
           </li>
           <li>
-            <button type='button'>Women</button>
+            <button className={styles.menuItem} type='button'>
+              Women
+            </button>
           </li>
           <li>
-            <button type='button'>About</button>
+            <button className={styles.menuItem} type='button'>
+              About
+            </button>
           </li>
           <li>
-            <button type='button'>Contact</button>
+            <button className={styles.menuItem} type='button'>
+              Contact
+            </button>
           </li>
         </ul>
-        <div>
+        <div className={styles.cartIconContainerParent}>
           <div
             className={styles.cartIconContainer}
             onMouseOver={onCartMouseOver}
@@ -52,7 +60,7 @@ function Navbar() {
           </div>
           <img src={avatarIcon} alt='avatar-icon' width={50} height={50} />
         </div>
-        {true && <Cart />}
+        {showCart && <Cart setShowCart={setShowCart} />}
       </nav>
     </header>
   )

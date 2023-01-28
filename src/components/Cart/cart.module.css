@@ -1,16 +1,78 @@
-.cartCard {
-  width: 300px;
-  height: 200px;
-  background-color: white;
+.overlay {
   position: absolute;
-  top: 100px;
-  right: 50px;
-  box-shadow: 0px 20px 20px 10px rgb(228, 228, 228);
+  top: 40px;
+  right: -80px;
+  height: 270px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cartCard {
+  width: 330px;
+  background-color: white;
+  box-shadow: 0px 18px 18px 8px rgb(228, 228, 228);
+  border-radius: 0.5rem;
+  display: block;
+  transition: var(--transition);
+}
+
+.cartCard > div:first-child {
+  width: 100%;
+  padding: 1.2rem;
+  border-bottom: 1px solid var(--mediumLightGreyshBlue);
+}
+
+.cartCard > div:first-child > p {
+  font-weight: 700;
+}
+
+.thumbnail {
   border-radius: 0.5rem;
 }
 
-@media (min-width: 1140px) {
-  .cartCard {
-    right: 0;
+.descriptionContainer {
+  padding: 1.2rem;
+}
+
+.itemContainer {
+  display: flex;
+  align-items: center;
+}
+
+.description {
+  color: var(--darkGrayishBlue);
+  padding: 0 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+.checkoutButton {
+  margin-top: 1rem;
+}
+
+.total {
+  font-weight: 700;
+}
+
+.deleteIcon {
+  cursor: pointer;
+  fill: #c3cad9;
+  display: block;
+  transition: var(--transition);
+}
+
+.deleteIcon:hover {
+  fill: var(--veryDarkBlue);
+}
+
+@media (max-width: 1350px) {
+  .overlay {
+    right: 0px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .overlay {
+    right: 2rem;
   }
 }
