@@ -1,16 +1,24 @@
-import { Image, ProductState } from '../types'
+import { ProductState } from '../types'
 
-type ProductAction = { type: 'setSelectedImage'; payload: Image }
+type ProductAction =
+  | { type: 'setProductImagesActiveIndex'; payload: number }
+  | { type: 'setIsModalOpen'; payload: boolean }
 
 function productReducer(
   state: ProductState,
   action: ProductAction
 ): ProductState {
   switch (action.type) {
-    case 'setSelectedImage':
+    case 'setProductImagesActiveIndex':
       return {
         ...state,
-        selectedImage: action.payload,
+        productImagesActiveIndex: action.payload,
+      }
+
+    case 'setIsModalOpen':
+      return {
+        ...state,
+        isModalOpen: action.payload,
       }
 
     default:

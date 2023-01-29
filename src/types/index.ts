@@ -5,5 +5,6 @@ export type Image = {
 }
 
 export type ProductState = {
-  selectedImage: Image
+  productImagesActiveIndex: number
+  isModalOpen: boolean
 }

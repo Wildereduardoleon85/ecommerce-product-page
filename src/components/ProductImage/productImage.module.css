@@ -1,46 +1,61 @@
-.sneakersImage {
+.largeImage {
   border-radius: 1rem;
+  transition: var(--transition);
+  width: 450px;
+  height: 450px;
+  vertical-align: bottom;
 }
 
 .thumbnailContainer {
+  margin-top: 1.5rem;
   display: flex;
   justify-content: space-between;
-  margin-top: 1.8rem;
+}
+
+.overlay {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: var(--transition);
+  outline: none;
+  border: none;
+}
+
+.overlay.active {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.overlay:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.thumbnail {
+  vertical-align: bottom;
 }
 
 .thumbnailButton {
-  background: none;
+  position: relative;
   outline: none;
-  border: none;
-  display: block;
-  border-radius: 0.5rem;
   overflow: hidden;
+  border-radius: 0.5rem;
   border: 2px solid transparent;
+  transition: var(--transition);
+  background-color: transparent;
+}
+
+.thumbnailButton:hover {
+  cursor: pointer;
 }
 
 .thumbnailButton.active {
   border: 2px solid var(--orange);
 }
 
-.thumbnail.active {
-  opacity: 0.5;
-}
-
-.thumbnail {
-  margin: 0 0.5rem;
-  transition: var(--transition);
-  vertical-align: bottom;
-}
-
-.thumbnail:hover {
-  opacity: 0.5;
+.imageButton {
+  background: none;
+  border: none;
+  outline: none;
   cursor: pointer;
-}
-
-.thumbnail:first-child {
-  margin-left: 0;
-}
-
-.thumbnail:last-child {
-  margin-right: 0;
 }

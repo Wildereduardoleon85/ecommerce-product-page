@@ -47,13 +47,6 @@
   border-bottom: 0.3rem solid var(--orange);
 }
 
-.cartIconContainerParent {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
 .navbarContainer > nav > div > img {
   border: 2px solid transparent;
   border-radius: 50%;
@@ -65,13 +58,23 @@
   border-color: var(--orange);
 }
 
+.cartAvatarContainer {
+  display: flex;
+  margin-left: auto;
+}
+
 .cartIconContainer {
-  cursor: pointer;
   margin-right: 1rem;
   position: relative;
-  width: 70px;
-  height: 100%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
   z-index: 1;
+}
+
+.cartIconContainer:hover .cartIcon {
+  fill: var(--veryDarkBlue);
 }
 
 .cartIconContainer > div {
@@ -80,18 +83,17 @@
   width: 18px;
   background-color: var(--orange);
   border-radius: 10px;
-  top: 45px;
-  right: 18px;
+  top: 10px;
+  right: 8px;
   font-size: 0.7rem;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  pointer-events: none;
 }
 
-.navbarContainer > nav > div > div > svg {
+.cartIcon {
   fill: #69707d;
   transition: var(--transition);
   position: absolute;
@@ -99,7 +101,7 @@
   left: calc(50% - (var(--cart-icon-width) / 2));
 }
 
-.navbarContainer > nav > div > div > svg:hover {
+.cartIcon.fill {
   fill: var(--veryDarkBlue);
 }
 

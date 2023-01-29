@@ -1,50 +1,68 @@
-import { MouseEvent, useState } from 'react'
-import { Image } from '../../types'
+import { useContext } from 'react'
+import ProductContext from '../../context/ProductContext'
 import { images } from '../constants'
 import styles from './productImage.module.css'
 
-function ProductImage() {
-  const [selectedImage, setSelectedImage] = useState<Image>(images[0])
+type ProductImageProps = {
+  className?: string
+  onLargeImageClick?: () => void
+}
 
-  function onThumbnailClick(e: MouseEvent<HTMLButtonElement>) {
-    const target = e.target as HTMLImageElement
+function ProductImage({ className, onLargeImageClick }: ProductImageProps) {
+  const {
+    state: { productImagesActiveIndex },
+    setProductImagesActiveIndex,
+  } = useContext(ProductContext)
 
-    setSelectedImage(images.find((image) => image.name === target.id) as Image)
-  }
+  const imageElement = (
+    <img
+      className={`${styles.largeImage} ${className || ''}`}
+      src={images[productImagesActiveIndex].largeImageUrl}
+      alt='product-1'
+    />
+  )
 
   return (
-    <div className={styles.container}>
-      <img
-        className={styles.sneakersImage}
-        src={selectedImage.largeImageUrl}
-        alt={selectedImage.name}
-        width={450}
-        height={450}
-      />
+    <>
+      {onLargeImageClick ? (
+        <button
+          className={styles.imageButton}
+          type='button'
+          onClick={onLargeImageClick}
+        >
+          {imageElement}
+        </button>
+      ) : (
+        imageElement
+      )}
+
       <div className={styles.thumbnailContainer}>
-        {images.map(({ name, thumbnailImageUrl }) => (
+        {images.map((image, index) => (
           <button
+            onClick={() => setProductImagesActiveIndex(index)}
+            key={image.name}
             className={`${styles.thumbnailButton} ${
-              name === selectedImage.name ? styles.active : ''
+              index === productImagesActiveIndex ? styles.active : ''
             }`}
-            key={name}
             type='button'
-            onClick={onThumbnailClick}
           >
-            <img
-              id={name}
-              className={`${styles.thumbnail} ${
-                name === selectedImage.name ? `${styles.active}` : ''
+            <div
+              id={image.name}
+              className={`${styles.overlay} ${
+                index === productImagesActiveIndex ? styles.active : ''
               }`}
+            />
+            <img
+              className={styles.thumbnail}
               width={90}
               height={90}
-              src={thumbnailImageUrl}
-              alt={name}
+              src={image.thumbnailImageUrl}
+              alt={image.name}
             />
           </button>
         ))}
       </div>
-    </div>
+    </>
   )
 }
 

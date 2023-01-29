@@ -1,25 +1,40 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import styles from './productModal.module.css'
 import { images } from '../constants'
 import { CloseIcon, NextIcon, PrevIcon } from '../Icons'
+import { ProductImage } from '../ProductImage'
+import ProductContext from '../../context/ProductContext'
 
 function ProductModal() {
-  const [activeIndex, setActiveIndex] = useState<number>(0)
+  const {
+    state: { productImagesActiveIndex },
+    setProductImagesActiveIndex,
+    setIsModalOpen,
+  } = useContext(ProductContext)
 
   function onNextImageClick() {
-    if (activeIndex === images.length - 1) return
-    setActiveIndex(activeIndex + 1)
+    if (productImagesActiveIndex === images.length - 1) return
+    setProductImagesActiveIndex(productImagesActiveIndex + 1)
   }
 
   function onPrevImageClick() {
-    if (activeIndex === 0) return
-    setActiveIndex(activeIndex - 1)
+    if (productImagesActiveIndex === 0) return
+    setProductImagesActiveIndex(productImagesActiveIndex - 1)
+  }
+
+  function onBackdropClick() {
+    setIsModalOpen(false)
   }
 
   return (
-    <div className={styles.modalBackdrop}>
+    <div className={styles.root}>
+      <div className={styles.backdrop} onClick={onBackdropClick} aria-hidden />
       <div className={styles.modalContainer}>
-        <button className={styles.closeButton} type='button'>
+        <button
+          onClick={() => setIsModalOpen(false)}
+          className={styles.closeButton}
+          type='button'
+        >
           <CloseIcon className={styles.closeIcon} />
         </button>
         <button
@@ -36,38 +51,8 @@ function ProductModal() {
         >
           <PrevIcon className={styles.chevronIcon} />
         </button>
-        <img
-          className={styles.largeImage}
-          src={images[activeIndex].largeImageUrl}
-          alt='product-1'
-          width={600}
-          height={600}
-        />
-        <div className={styles.thumbnailContainer}>
-          {images.map((image, index) => (
-            <button
-              onClick={() => setActiveIndex(index)}
-              key={image.name}
-              className={`${styles.thumbnailButton} ${
-                index === activeIndex ? styles.active : ''
-              }`}
-              type='button'
-            >
-              <div
-                id={image.name}
-                className={`${styles.overlay} ${
-                  index === activeIndex ? styles.active : ''
-                }`}
-              />
-              <img
-                className={styles.thumbnail}
-                width={90}
-                height={90}
-                src={image.thumbnailImageUrl}
-                alt={image.name}
-              />
-            </button>
-          ))}
+        <div>
+          <ProductImage className={styles.productImage} />
         </div>
       </div>
     </div>

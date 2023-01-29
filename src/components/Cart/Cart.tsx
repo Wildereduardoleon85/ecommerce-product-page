@@ -18,8 +18,7 @@ function Cart({ setShowCart }: CartProps) {
 
   return (
     <div
-      onMouseOver={onCartMouseOver}
-      onFocus={onCartMouseOver}
+      onMouseEnter={onCartMouseOver}
       onMouseLeave={onCartMouseLeave}
       className={styles.overlay}
     >

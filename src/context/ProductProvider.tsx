@@ -1,6 +1,5 @@
 import { useMemo, useReducer } from 'react'
-import { images } from '../components/constants'
-import { Image, ProductState } from '../types'
+import { ProductState } from '../types'
 import ProductContext from './ProductContext'
 import productReducer from './productReducer'
 
@@ -9,23 +8,32 @@ type ProductProviderProps = {
 }
 
 const initialState: ProductState = {
-  selectedImage: images[0],
+  productImagesActiveIndex: 0,
+  isModalOpen: true,
 }
 
 function ProductProvider({ children }: ProductProviderProps) {
   const [state, dispatch] = useReducer(productReducer, initialState)
 
-  function setSelectedImage(image: Image) {
+  function setProductImagesActiveIndex(index: number) {
     dispatch({
-      type: 'setSelectedImage',
-      payload: image,
+      type: 'setProductImagesActiveIndex',
+      payload: index,
+    })
+  }
+
+  function setIsModalOpen(isModalOpen: boolean) {
+    dispatch({
+      type: 'setIsModalOpen',
+      payload: isModalOpen,
     })
   }
 
   const memoizedState = useMemo(
     () => ({
       state,
-      setSelectedImage,
+      setProductImagesActiveIndex,
+      setIsModalOpen,
     }),
     [state, dispatch]
   )

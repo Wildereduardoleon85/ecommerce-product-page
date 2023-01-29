@@ -1,9 +1,10 @@
 import { createContext } from 'react'
-import { Image, ProductState } from '../types'
+import { ProductState } from '../types'
 
 type ProductContextProps = {
   state: ProductState
-  setSelectedImage: (image: Image) => void
+  setProductImagesActiveIndex: (index: number) => void
+  setIsModalOpen: (isModalOpen: boolean) => void
 }
 
 const ProductContext = createContext({} as ProductContextProps)

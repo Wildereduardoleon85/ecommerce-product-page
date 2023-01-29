@@ -1,15 +1,10 @@
-import { Navbar, ProductDetail, ProductImage, ProductModal } from './components'
+import { Layout } from './components'
 import ProductProvider from './context/ProductProvider'
 
 function App() {
   return (
     <ProductProvider>
-      <Navbar />
-      <main>
-        <ProductImage />
-        <ProductDetail />
-      </main>
-      <ProductModal />
+      <Layout />
     </ProductProvider>
   )
 }
