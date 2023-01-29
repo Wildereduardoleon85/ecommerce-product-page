@@ -8,19 +8,26 @@ type ProductImageProps = {
   onLargeImageClick?: () => void
 }
 
+type ImageProps = {
+  imageIindex: number
+  className?: string
+}
+
+function Image({ imageIindex, className }: ImageProps) {
+  return (
+    <img
+      className={`${styles.largeImage} ${className || ''}`}
+      src={images[imageIindex].largeImageUrl}
+      alt={images[imageIindex].name}
+    />
+  )
+}
+
 function ProductImage({ className, onLargeImageClick }: ProductImageProps) {
   const {
     state: { productImagesActiveIndex },
     setProductImagesActiveIndex,
   } = useContext(ProductContext)
-
-  const imageElement = (
-    <img
-      className={`${styles.largeImage} ${className || ''}`}
-      src={images[productImagesActiveIndex].largeImageUrl}
-      alt='product-1'
-    />
-  )
 
   return (
     <>
@@ -30,10 +37,10 @@ function ProductImage({ className, onLargeImageClick }: ProductImageProps) {
           type='button'
           onClick={onLargeImageClick}
         >
-          {imageElement}
+          <Image imageIindex={productImagesActiveIndex} className={className} />
         </button>
       ) : (
-        imageElement
+        <Image imageIindex={productImagesActiveIndex} className={className} />
       )}
 
       <div className={styles.thumbnailContainer}>

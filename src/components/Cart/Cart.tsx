@@ -18,35 +18,33 @@ function Cart({ setShowCart }: CartProps) {
 
   return (
     <div
+      className={styles.cartCard}
       onMouseEnter={onCartMouseOver}
       onMouseLeave={onCartMouseLeave}
-      className={styles.overlay}
     >
-      <div className={styles.cartCard}>
-        <div>
-          <p>Cart</p>
-        </div>
-        <div className={styles.descriptionContainer}>
-          <div className={styles.itemContainer}>
-            <img
-              className={styles.thumbnail}
-              src={thumbnail}
-              alt='thumbnail'
-              width={50}
-              height={50}
-            />
-            <p className={styles.description}>
-              Fall Limited Edition Sneakers $125.00 x 3{' '}
-              <span className={styles.total}>$375.00</span>
-            </p>
-            <div>
-              <DeleteIcon className={styles.deleteIcon} />
-            </div>
+      <div>
+        <p>Cart</p>
+      </div>
+      <div className={styles.descriptionContainer}>
+        <div className={styles.itemContainer}>
+          <img
+            className={styles.thumbnail}
+            src={thumbnail}
+            alt='thumbnail'
+            width={50}
+            height={50}
+          />
+          <p className={styles.description}>
+            Fall Limited Edition Sneakers $125.00 x 3{' '}
+            <span className={styles.total}>$375.00</span>
+          </p>
+          <div>
+            <DeleteIcon className={styles.deleteIcon} />
           </div>
-          <button className={`button ${styles.checkoutButton}`} type='button'>
-            Checkout
-          </button>
         </div>
+        <button className={`button ${styles.checkoutButton}`} type='button'>
+          Checkout
+        </button>
       </div>
     </div>
   )

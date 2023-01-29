@@ -13,6 +13,10 @@ function Navbar() {
     setShowCart(true)
   }
 
+  function onCartMouseLeave() {
+    setShowCart(false)
+  }
+
   return (
     <header className={styles.navbarContainer}>
       <nav>
@@ -47,11 +51,16 @@ function Navbar() {
         </ul>
         <div className={styles.cartAvatarContainer}>
           <div
-            className={styles.cartIconContainer}
+            className={styles.popper}
             onMouseEnter={onCartMouseOver}
+            onMouseLeave={onCartMouseLeave}
           >
-            <CartIcon className={styles.cartIcon} />
-            <div>3</div>
+            <div className={styles.cartIconContainer}>
+              <CartIcon
+                className={`${styles.cartIcon} ${showCart ? styles.fill : ''}`}
+              />
+              <div>3</div>
+            </div>
           </div>
           <img src={avatarIcon} alt='avatar-icon' width={50} height={50} />
         </div>

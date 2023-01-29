@@ -9,7 +9,7 @@ type ProductProviderProps = {
 
 const initialState: ProductState = {
   productImagesActiveIndex: 0,
-  isModalOpen: true,
+  isModalOpen: false,
 }
 
 function ProductProvider({ children }: ProductProviderProps) {

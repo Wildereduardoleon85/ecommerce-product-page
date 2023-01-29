@@ -4,6 +4,7 @@ import { images } from '../constants'
 import { CloseIcon, NextIcon, PrevIcon } from '../Icons'
 import { ProductImage } from '../ProductImage'
 import ProductContext from '../../context/ProductContext'
+import { Portal } from '../Portal'
 
 function ProductModal() {
   const {
@@ -27,35 +28,41 @@ function ProductModal() {
   }
 
   return (
-    <div className={styles.root}>
-      <div className={styles.backdrop} onClick={onBackdropClick} aria-hidden />
-      <div className={styles.modalContainer}>
-        <button
-          onClick={() => setIsModalOpen(false)}
-          className={styles.closeButton}
-          type='button'
-        >
-          <CloseIcon className={styles.closeIcon} />
-        </button>
-        <button
-          onClick={onNextImageClick}
-          type='button'
-          className={`${styles.IconButton} ${styles.next}`}
-        >
-          <NextIcon className={styles.chevronIcon} />
-        </button>
-        <button
-          onClick={onPrevImageClick}
-          type='button'
-          className={`${styles.IconButton} ${styles.prev}`}
-        >
-          <PrevIcon className={styles.chevronIcon} />
-        </button>
-        <div>
-          <ProductImage className={styles.productImage} />
+    <Portal wrapperId='modal-root'>
+      <div className={styles.productModal}>
+        <div
+          className={styles.backdrop}
+          onClick={onBackdropClick}
+          aria-hidden
+        />
+        <div className={styles.modalContainer}>
+          <button
+            onClick={() => setIsModalOpen(false)}
+            className={styles.closeButton}
+            type='button'
+          >
+            <CloseIcon className={styles.closeIcon} />
+          </button>
+          <button
+            onClick={onNextImageClick}
+            type='button'
+            className={`${styles.IconButton} ${styles.next}`}
+          >
+            <NextIcon className={styles.chevronIcon} />
+          </button>
+          <button
+            onClick={onPrevImageClick}
+            type='button'
+            className={`${styles.IconButton} ${styles.prev}`}
+          >
+            <PrevIcon className={styles.chevronIcon} />
+          </button>
+          <div>
+            <ProductImage className={styles.productImage} />
+          </div>
         </div>
       </div>
-    </div>
+    </Portal>
   )
 }
 

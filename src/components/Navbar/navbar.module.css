@@ -61,20 +61,22 @@
 .cartAvatarContainer {
   display: flex;
   margin-left: auto;
+  height: 100%;
+  align-items: center;
+}
+
+.popper {
+  margin-right: 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .cartIconContainer {
-  margin-right: 1rem;
   position: relative;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
   cursor: pointer;
-  z-index: 1;
-}
-
-.cartIconContainer:hover .cartIcon {
-  fill: var(--veryDarkBlue);
 }
 
 .cartIconContainer > div {

@@ -1,4 +1,4 @@
-.root {
+.productModal {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@
 }
 
 .backdrop {
-  background-color: rgba(0, 0, 0, 0.562);
+  background-color: rgba(0, 0, 0, 0.7);
   height: 100%;
   width: 100%;
   top: 0;
