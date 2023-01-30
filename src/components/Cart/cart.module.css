@@ -1,7 +1,7 @@
 .cartCard {
   width: 330px;
   background-color: white;
-  box-shadow: 0px 18px 18px 8px rgb(228, 228, 228);
+  box-shadow: 0px 18px 18px 8px rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
   display: block;
   transition-property: all;
@@ -43,7 +43,7 @@
 }
 
 .checkoutButton {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .total {
@@ -51,7 +51,6 @@
 }
 
 .deleteIcon {
-  cursor: pointer;
   fill: #c3cad9;
   display: block;
   transition-property: fill;
@@ -59,7 +58,26 @@
   transition-timing-function: var(--ttfunction);
 }
 
-.deleteIcon:hover {
+.emptyCart {
+  height: 165px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyCart > p {
+  font-weight: 700;
+  color: var(--darkGrayishBlue);
+}
+
+.iconButton {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.iconButton:hover .deleteIcon {
   fill: var(--veryDarkBlue);
 }
 

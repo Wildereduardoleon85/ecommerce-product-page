@@ -1,8 +1,10 @@
 import { useContext } from 'react'
-import { images } from '../../constants'
+import { product } from '../../constants'
 import ProductContext from '../../context/ProductContext'
 import { NextIcon, PrevIcon, ProductImage } from '..'
 import styles from './carousel.module.css'
+
+const { images } = product
 
 type CarouselProps = {
   className?: string

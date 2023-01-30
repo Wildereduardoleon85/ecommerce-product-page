@@ -33,7 +33,7 @@
   margin-top: 2.5rem;
 }
 
-.prize span {
+.prize > p:first-child > span {
   color: var(--orange);
   background-color: var(--paleOrange);
   border-radius: 0.25rem;
@@ -101,5 +101,19 @@
 .counterButtons div {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-weight: 700;
+  width: 70px;
+}
+
+.cartButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.cartIcon {
+  fill: white;
+  margin-right: 1rem;
 }

@@ -1,9 +1,10 @@
+import { ReactNode } from 'react'
 import styles from './button.module.css'
 
 type ButtonProps = {
   className?: string
   onClick?: () => void
-  children: JSX.Element | JSX.Element[] | string
+  children: ReactNode
 }
 
 function Button({ className, onClick, children }: ButtonProps) {

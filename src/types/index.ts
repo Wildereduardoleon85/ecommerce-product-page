@@ -7,4 +7,13 @@ export type Image = {
 export type ProductState = {
   productImagesActiveIndex: number
   isModalOpen: boolean
+  cartItems: number
+}
+
+export type Product = {
+  prize: number
+  discount: number
+  name: string
+  description: string
+  images: Image[]
 }

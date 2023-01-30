@@ -8,6 +8,7 @@ type ProductProviderProps = {
 }
 
 const initialState: ProductState = {
+  cartItems: 0,
   productImagesActiveIndex: 0,
   isModalOpen: false,
 }
@@ -29,11 +30,19 @@ function ProductProvider({ children }: ProductProviderProps) {
     })
   }
 
+  function setCartItems(item: number) {
+    dispatch({
+      type: 'setCartItems',
+      payload: item,
+    })
+  }
+
   const memoizedState = useMemo(
     () => ({
       state,
       setProductImagesActiveIndex,
       setIsModalOpen,
+      setCartItems,
     }),
     [state, dispatch]
   )

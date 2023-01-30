@@ -1,7 +1,9 @@
 import { useContext } from 'react'
 import ProductContext from '../../context/ProductContext'
-import { images } from '../../constants'
+import { product } from '../../constants'
 import styles from './productImage.module.css'
+
+const { images } = product
 
 type ProductImageProps = {
   className?: string

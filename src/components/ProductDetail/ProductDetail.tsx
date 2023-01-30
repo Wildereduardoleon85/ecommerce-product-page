@@ -1,29 +1,60 @@
+import { useCallback, useContext, useState } from 'react'
+import { product } from '../../constants'
+import ProductContext from '../../context/ProductContext'
+import { CartIcon } from '../Icons'
 import { Button } from '../UI'
 import styles from './productDetail.module.css'
 
+const { name, description, prize, discount } = product
+
 function ProductDetail() {
+  const {
+    state: { cartItems },
+    setCartItems,
+  } = useContext(ProductContext)
+  const [itemsToAdd, setItemsToAdd] = useState<number>(cartItems)
+
+  function onItemsToAdd() {
+    setItemsToAdd(itemsToAdd + 1)
+  }
+
+  function onItemsToRemove() {
+    if (itemsToAdd === 0) return
+    setItemsToAdd(itemsToAdd - 1)
+  }
+
+  const onAddItemsToTheCart = useCallback(() => {
+    setCartItems(itemsToAdd)
+  }, [itemsToAdd])
+
   return (
     <div className={styles.container}>
       <p className={styles.companyTag}>SNEAKER COMPANY</p>
-      <h1 className={styles.title}>Fall Limited Editon Sneakers</h1>
-      <p className={styles.description}>
-        These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they&apos;ll withstandg
-        everything the wheater can offer.
-      </p>
+      <h1 className={styles.title}>{name}</h1>
+      <p className={styles.description}>{description}</p>
       <div className={styles.prize}>
         <p>
-          $125.00<span>50%</span>
+          {`$${(prize * discount).toFixed(2)}`}
+          <span>{`${discount * 100}%`}</span>
         </p>
-        <p>$250.00</p>
+        <p>{`$${prize.toFixed(2)}`}</p>
       </div>
       <div className={styles.buttonsGroup}>
         <div className={styles.counterButtons}>
-          <button type='button'>-</button>
-          <div>0</div>
-          <button type='button'>+</button>
+          <button type='button' onClick={onItemsToRemove}>
+            -
+          </button>
+          <div>{String(itemsToAdd)}</div>
+          <button type='button' onClick={onItemsToAdd}>
+            +
+          </button>
         </div>
-        <Button>Add to cart</Button>
+        <Button className={styles.cartButton} onClick={onAddItemsToTheCart}>
+          <span>
+            <CartIcon className={styles.cartIcon} />
+          </span>
+          Add to cart
+        </Button>
       </div>
     </div>
   )

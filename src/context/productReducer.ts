@@ -3,6 +3,7 @@ import { ProductState } from '../types'
 type ProductAction =
   | { type: 'setProductImagesActiveIndex'; payload: number }
   | { type: 'setIsModalOpen'; payload: boolean }
+  | { type: 'setCartItems'; payload: number }
 
 function productReducer(
   state: ProductState,
@@ -19,6 +20,12 @@ function productReducer(
       return {
         ...state,
         isModalOpen: action.payload,
+      }
+
+    case 'setCartItems':
+      return {
+        ...state,
+        cartItems: action.payload,
       }
 
     default:

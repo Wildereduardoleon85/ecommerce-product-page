@@ -1,11 +1,15 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import styles from './navbar.module.css'
 import logo from '../../assets/logo.svg'
 import menuIcon from '../../assets/icon-menu.svg'
 import avatarIcon from '../../assets/image-avatar.png'
 import { Cart, CartIcon } from '..'
+import ProductContext from '../../context/ProductContext'
 
 function Navbar() {
+  const {
+    state: { cartItems },
+  } = useContext(ProductContext)
   const [showCart, setShowCart] = useState<boolean>(false)
 
   function onCartMouseOver() {
@@ -58,7 +62,7 @@ function Navbar() {
               <CartIcon
                 className={`${styles.cartIcon} ${showCart ? styles.fill : ''}`}
               />
-              <div>3</div>
+              {cartItems > 0 && <div>{String(cartItems)}</div>}
             </div>
           </div>
           <img src={avatarIcon} alt='avatar-icon' width={50} height={50} />
