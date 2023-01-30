@@ -39,7 +39,9 @@
   cursor: pointer;
   height: 100%;
   border-bottom: 0.3rem solid transparent;
-  transition: var(--transition);
+  transition-property: color;
+  transition-duration: var(--tduration);
+  transition-timing-function: var(--ttfunction);
 }
 
 .menuItem:hover {
@@ -51,7 +53,9 @@
   border: 2px solid transparent;
   border-radius: 50%;
   cursor: pointer;
-  transition: var(--transition);
+  transition-property: border;
+  transition-duration: var(--tduration);
+  transition-timing-function: var(--ttfunction);
 }
 
 .navbarContainer > nav > div > img:hover {
@@ -97,7 +101,9 @@
 
 .cartIcon {
   fill: #69707d;
-  transition: var(--transition);
+  transition-property: fill;
+  transition-duration: var(--tduration);
+  transition-timing-function: var(--ttfunction);
   position: absolute;
   top: calc(50% - (var(--cart-icon-height) / 2));
   left: calc(50% - (var(--cart-icon-width) / 2));

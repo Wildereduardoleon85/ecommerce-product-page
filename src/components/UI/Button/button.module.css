@@ -1,0 +1,22 @@
+.button {
+  background-color: var(--orange);
+  padding: 1rem;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  width: 100%;
+  cursor: pointer;
+  transition-property: opacity;
+  transition-duration: var(--tduration);
+  transition-timing-function: var(--ttfunction);
+}
+
+.button:hover {
+  opacity: 0.5;
+}
+
+.button:active {
+  background-color: var(--lightOrange);
+}

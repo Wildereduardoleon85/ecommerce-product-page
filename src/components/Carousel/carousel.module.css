@@ -1,0 +1,60 @@
+.carousel {
+  position: relative;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+.IconButton {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  top: calc(600px / 2 - (50px / 2));
+}
+
+.next {
+  right: -25px;
+}
+
+.next > svg {
+  margin-left: 4px;
+}
+
+.prev {
+  left: -25px;
+}
+
+.prev svg {
+  margin-right: 4px;
+}
+
+.IconButton:hover .chevronIcon {
+  stroke: var(--orange);
+}
+
+.IconButton > svg {
+  stroke: #1d2026;
+  transition-property: stroke;
+  transition-duration: var(--tduration);
+  transition-timing-function: var(--ttfunction);
+}
+
+.productImage {
+  width: 600px;
+  height: 600px;
+}
+
+.productImage + div {
+  justify-content: center;
+}
+
+.productImage + div > button {
+  margin: 0 1rem;
+}

@@ -26,7 +26,7 @@ function Portal({ children, wrapperId }: PortalProps) {
       element = createWrapperAndAppendToBody(wrapperId)
     }
 
-    setWrapperElement(element as HTMLElement)
+    setWrapperElement(element)
 
     return () => {
       const htmlElement = element as HTMLElement
@@ -38,7 +38,7 @@ function Portal({ children, wrapperId }: PortalProps) {
 
   if (wrapperElement === null) return null
 
-  return createPortal(children, wrapperElement as HTMLElement)
+  return createPortal(children, wrapperElement)
 }
 
 export default Portal

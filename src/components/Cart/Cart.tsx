@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react'
 import styles from './cart.module.css'
 import thumbnail from '../../assets/image-product-1-thumbnail.jpg'
-import { DeleteIcon } from '../Icons'
+import { Button, DeleteIcon } from '..'
 
 type CartProps = {
   setShowCart: Dispatch<SetStateAction<boolean>>
@@ -42,9 +42,7 @@ function Cart({ setShowCart }: CartProps) {
             <DeleteIcon className={styles.deleteIcon} />
           </div>
         </div>
-        <button className={`button ${styles.checkoutButton}`} type='button'>
-          Checkout
-        </button>
+        <Button className={styles.checkoutButton}>Checkout</Button>
       </div>
     </div>
   )

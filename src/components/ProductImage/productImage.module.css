@@ -1,6 +1,8 @@
 .largeImage {
   border-radius: 1rem;
-  transition: var(--transition);
+  transition-property: all;
+  transition-duration: var(--tduration);
+  transition-timing-function: var(--ttfunction);
   width: 450px;
   height: 450px;
   vertical-align: bottom;
@@ -18,7 +20,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  transition: var(--transition);
+  transition-property: background-color;
+  transition-duration: var(--tduration);
+  transition-timing-function: var(--ttfunction);
   outline: none;
   border: none;
 }
@@ -41,7 +45,6 @@
   overflow: hidden;
   border-radius: 0.5rem;
   border: 2px solid transparent;
-  transition: var(--transition);
   background-color: transparent;
 }
 

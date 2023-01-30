@@ -4,7 +4,9 @@
   box-shadow: 0px 18px 18px 8px rgb(228, 228, 228);
   border-radius: 0.5rem;
   display: block;
-  transition: var(--transition);
+  transition-property: all;
+  transition-duration: var(--tduration);
+  transition-timing-function: var(--ttfunction);
   position: absolute;
   top: 100px;
   right: -60px;
@@ -52,7 +54,9 @@
   cursor: pointer;
   fill: #c3cad9;
   display: block;
-  transition: var(--transition);
+  transition-property: fill;
+  transition-duration: var(--tduration);
+  transition-timing-function: var(--ttfunction);
 }
 
 .deleteIcon:hover {
@@ -60,13 +64,13 @@
 }
 
 @media (max-width: 1350px) {
-  .overlay {
-    right: 0px;
+  .cartCard {
+    right: 0;
   }
 }
 
 @media (max-width: 1180px) {
-  .overlay {
+  .cartCard {
     right: 2rem;
   }
 }

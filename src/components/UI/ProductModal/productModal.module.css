@@ -1,0 +1,44 @@
+.productModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.closeIcon {
+  fill: white;
+  transform: scale(1.6);
+  vertical-align: bottom;
+  transition-property: fill;
+  transition-duration: var(--tduration);
+  transition-timing-function: var(--ttfunction);
+}
+
+.closeButton:hover .closeIcon {
+  fill: var(--orange);
+}
+
+.closeButton {
+  position: absolute;
+  background: none;
+  border: none;
+  outline: none;
+  width: 22.4px;
+  height: 24px;
+  right: 0;
+  top: -50px;
+  cursor: pointer;
+}

@@ -1,6 +1,7 @@
 :root {
   /* palette */
   --orange: #ff7d1a;
+  --lightOrange: #ffa057;
   --paleOrange: #ffede0;
   --veryDarkBlue: #1d2025;
   --darkGrayishBlue: #68707d;
@@ -10,7 +11,8 @@
   --black: hsl(0, 0%, 0%);
   --mediumLightGreyshBlue: #e8e7ec;
   /* other */
-  --transition: all ease-in-out 0.15s;
+  --tduration: 0.15s;
+  --ttfunction: ease-in-out;
   --cart-icon-height: 20px;
   --cart-icon-width: 22px;
   --max-width: 1140px;
@@ -22,23 +24,6 @@
   box-sizing: border-box;
   font-family: 'Kumbh Sans', sans-serif;
   color: var(--veryDarkBlue);
-}
-
-.button {
-  background-color: var(--orange);
-  padding: 1rem;
-  border: none;
-  outline: none;
-  color: white;
-  border-radius: 0.5rem;
-  font-weight: 700;
-  width: 100%;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.button:hover {
-  opacity: 0.5;
 }
 
 main {

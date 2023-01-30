@@ -1,4 +1,4 @@
-import { Image } from '../../types'
+import { Image } from '../types'
 import {
   product1,
   product2,
@@ -8,7 +8,7 @@ import {
   product2Thumbnail,
   product3Thumbnail,
   product4Thumbnail,
-} from '../../assets'
+} from '../assets'
 
 const images: Image[] = [
   {
