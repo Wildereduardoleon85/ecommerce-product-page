@@ -31,18 +31,18 @@ function Carousel({ className, closeButton }: CarouselProps) {
     <div className={`${styles.carousel} ${className || ''}`}>
       {closeButton || null}
       <button
-        onClick={onNextImageClick}
-        type='button'
-        className={`${styles.IconButton} ${styles.next}`}
-      >
-        <NextIcon className={styles.chevronIcon} />
-      </button>
-      <button
         onClick={onPrevImageClick}
         type='button'
         className={`${styles.IconButton} ${styles.prev}`}
       >
         <PrevIcon className={styles.chevronIcon} />
+      </button>
+      <button
+        onClick={onNextImageClick}
+        type='button'
+        className={`${styles.IconButton} ${styles.next}`}
+      >
+        <NextIcon className={styles.chevronIcon} />
       </button>
       <div>
         <ProductImage className={styles.productImage} />

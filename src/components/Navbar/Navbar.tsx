@@ -3,7 +3,7 @@ import styles from './navbar.module.css'
 import logo from '../../assets/logo.svg'
 import menuIcon from '../../assets/icon-menu.svg'
 import avatarIcon from '../../assets/image-avatar.png'
-import { CartIcon } from '..'
+import { CartIcon, Cart } from '..'
 import ProductContext from '../../context/ProductContext'
 import { useMediaQuery } from '../../hooks'
 
@@ -78,6 +78,7 @@ function Navbar() {
           </div>
           <img src={avatarIcon} alt='avatar-icon' width={50} height={50} />
         </div>
+        {showCart && <Cart />}
       </nav>
     </header>
   )

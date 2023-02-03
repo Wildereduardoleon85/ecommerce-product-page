@@ -1,7 +1,7 @@
 import { useCallback, useContext, useState } from 'react'
 import { product } from '../../constants'
 import ProductContext from '../../context/ProductContext'
-import { CartIcon, PlusIcon, MinusIcon, DeleteIcon } from '..'
+import { CartIcon, PlusIcon, MinusIcon } from '..'
 import { Button } from '../UI'
 import styles from './productDetail.module.css'
 
