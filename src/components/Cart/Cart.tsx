@@ -15,6 +15,7 @@ function Cart() {
     setShowCart,
   } = useContext(ProductContext)
   const isMobile = useMediaQuery()
+  const isCartEmpty = cartItems === 0
 
   function escapeKeyHandler(e: globalThis.KeyboardEvent): void {
     if (e.key === 'Escape' && showCart) {
@@ -29,8 +30,6 @@ function Cart() {
       window.removeEventListener('keydown', escapeKeyHandler)
     }
   }, [])
-
-  const isCartEmpty = cartItems === 0
 
   function onCartMouseOver() {
     setShowCart(true)

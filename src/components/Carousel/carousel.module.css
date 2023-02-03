@@ -15,7 +15,6 @@
   justify-content: center;
   cursor: pointer;
   border: none;
-  /* outline: none; */
   top: calc(600px / 2 - (50px / 2));
 }
 
