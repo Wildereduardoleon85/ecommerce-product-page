@@ -44,7 +44,8 @@
   transition-timing-function: var(--ttfunction);
 }
 
-.menuItem:hover {
+.menuItem:hover,
+.menuItem:focus-visible {
   color: var(--veryDarkBlue);
   border-bottom: 0.3rem solid var(--orange);
 }
@@ -76,14 +77,21 @@
   align-items: center;
 }
 
-.cartIconContainer {
+.cartButton {
   position: relative;
   width: 50px;
   height: 50px;
   cursor: pointer;
+  background: none;
+  border-radius: 50%;
+  border: none;
 }
 
-.cartIconContainer > div {
+.cartButton:focus-visible {
+  outline: 2px solid var(--orange);
+}
+
+.cartButton > div {
   position: absolute;
   height: 13px;
   width: 18px;

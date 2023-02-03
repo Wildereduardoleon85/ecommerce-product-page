@@ -6,6 +6,7 @@ type ProductContextProps = {
   setProductImagesActiveIndex: (index: number) => void
   setIsModalOpen: (isModalOpen: boolean) => void
   setCartItems: (items: number) => void
+  setShowCart: (shouldShowCart: boolean) => void
 }
 
 const ProductContext = createContext({} as ProductContextProps)

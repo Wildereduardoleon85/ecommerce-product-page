@@ -1,7 +1,7 @@
 import { useCallback, useContext, useState } from 'react'
 import { product } from '../../constants'
 import ProductContext from '../../context/ProductContext'
-import { CartIcon } from '../Icons'
+import { CartIcon, PlusIcon, MinusIcon, DeleteIcon } from '..'
 import { Button } from '../UI'
 import styles from './productDetail.module.css'
 
@@ -42,11 +42,11 @@ function ProductDetail() {
       <div className={styles.buttonsGroup}>
         <div className={styles.counterButtons}>
           <button type='button' onClick={onItemsToRemove}>
-            -
+            <MinusIcon className={styles.minusIcon} />
           </button>
           <div>{String(itemsToAdd)}</div>
           <button type='button' onClick={onItemsToAdd}>
-            +
+            <PlusIcon className={styles.plusIcon} />
           </button>
         </div>
         <Button className={styles.cartButton} onClick={onAddItemsToTheCart}>

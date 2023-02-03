@@ -32,3 +32,16 @@ main {
   padding: 4rem 2rem;
   display: flex;
 }
+
+@media (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 820px) {
+  main {
+    padding: 0;
+    display: block;
+  }
+}

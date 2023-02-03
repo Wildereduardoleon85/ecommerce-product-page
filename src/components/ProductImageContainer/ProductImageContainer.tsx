@@ -1,10 +1,12 @@
 import { useCallback, useContext } from 'react'
-import { ProductImage } from '..'
+import { Carousel, ProductImage } from '..'
 import ProductContext from '../../context/ProductContext'
-// import styles from './productImageContainer.module.css'
+import { useMediaQuery } from '../../hooks'
+import styles from './productImageContainer.module.css'
 
 function ProductImageContainer() {
   const { setIsModalOpen } = useContext(ProductContext)
+  const isMobile = useMediaQuery()
 
   const onLargeImageClick = useCallback(() => {
     setIsModalOpen(true)
@@ -12,7 +14,11 @@ function ProductImageContainer() {
 
   return (
     <div>
-      <ProductImage onLargeImageClick={onLargeImageClick} />
+      {isMobile ? (
+        <Carousel className={styles.carousel} />
+      ) : (
+        <ProductImage onLargeImageClick={onLargeImageClick} />
+      )}
     </div>
   )
 }

@@ -4,6 +4,7 @@ type ProductAction =
   | { type: 'setProductImagesActiveIndex'; payload: number }
   | { type: 'setIsModalOpen'; payload: boolean }
   | { type: 'setCartItems'; payload: number }
+  | { type: 'setShowCart'; payload: boolean }
 
 function productReducer(
   state: ProductState,
@@ -26,6 +27,12 @@ function productReducer(
       return {
         ...state,
         cartItems: action.payload,
+      }
+
+    case 'setShowCart':
+      return {
+        ...state,
+        showCart: action.payload,
       }
 
     default:

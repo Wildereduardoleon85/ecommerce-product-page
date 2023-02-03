@@ -8,9 +8,12 @@ export { Carousel } from './Carousel'
 // UI:
 export { Button } from './UI'
 export { ProductModal } from './UI'
+export { ClickAwayOverlay } from './UI'
 // Icons:
 export { CartIcon } from './Icons'
 export { CloseIcon } from './Icons'
 export { DeleteIcon } from './Icons'
 export { NextIcon } from './Icons'
 export { PrevIcon } from './Icons'
+export { PlusIcon } from './Icons'
+export { MinusIcon } from './Icons'

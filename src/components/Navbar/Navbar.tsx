@@ -1,16 +1,18 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import styles from './navbar.module.css'
 import logo from '../../assets/logo.svg'
 import menuIcon from '../../assets/icon-menu.svg'
 import avatarIcon from '../../assets/image-avatar.png'
-import { Cart, CartIcon } from '..'
+import { CartIcon } from '..'
 import ProductContext from '../../context/ProductContext'
+import { useMediaQuery } from '../../hooks'
 
 function Navbar() {
   const {
-    state: { cartItems },
+    state: { cartItems, showCart },
+    setShowCart,
   } = useContext(ProductContext)
-  const [showCart, setShowCart] = useState<boolean>(false)
+  const isMobile = useMediaQuery()
 
   function onCartMouseOver() {
     setShowCart(true)
@@ -18,6 +20,10 @@ function Navbar() {
 
   function onCartMouseLeave() {
     setShowCart(false)
+  }
+
+  function onCartClick() {
+    setShowCart(true)
   }
 
   return (
@@ -55,19 +61,23 @@ function Navbar() {
         <div className={styles.cartAvatarContainer}>
           <div
             className={styles.popper}
-            onMouseEnter={onCartMouseOver}
-            onMouseLeave={onCartMouseLeave}
+            onMouseEnter={isMobile ? () => null : onCartMouseOver}
+            onMouseLeave={isMobile ? () => null : onCartMouseLeave}
+            aria-hidden
           >
-            <div className={styles.cartIconContainer}>
+            <button
+              type='button'
+              className={styles.cartButton}
+              onClick={onCartClick}
+            >
               <CartIcon
                 className={`${styles.cartIcon} ${showCart ? styles.fill : ''}`}
               />
               {cartItems > 0 && <div>{String(cartItems)}</div>}
-            </div>
+            </button>
           </div>
           <img src={avatarIcon} alt='avatar-icon' width={50} height={50} />
         </div>
-        {showCart && <Cart setShowCart={setShowCart} />}
       </nav>
     </header>
   )

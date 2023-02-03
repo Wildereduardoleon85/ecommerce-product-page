@@ -37,6 +37,8 @@
 
 .thumbnail {
   vertical-align: bottom;
+  width: 90px;
+  height: 90px;
 }
 
 .thumbnailButton {
@@ -46,6 +48,10 @@
   border-radius: 0.5rem;
   border: 2px solid transparent;
   background-color: transparent;
+}
+
+.thumbnailButton:focus-visible {
+  outline: 2px solid var(--orange);
 }
 
 .thumbnailButton:hover {
@@ -61,4 +67,16 @@
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .largeImage {
+    width: 400px;
+    height: 400px;
+  }
+
+  .thumbnail {
+    width: 80px;
+    height: 80px;
+  }
 }

@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import ProductContext from '../../context/ProductContext'
 import { product } from '../../constants'
 import styles from './productImage.module.css'
+import { useMediaQuery } from '../../hooks'
 
 const { images } = product
 
@@ -26,6 +27,7 @@ function Image({ imageIindex, className }: ImageProps) {
 }
 
 function ProductImage({ className, onLargeImageClick }: ProductImageProps) {
+  const isMobile = useMediaQuery()
   const {
     state: { productImagesActiveIndex },
     setProductImagesActiveIndex,
@@ -45,32 +47,32 @@ function ProductImage({ className, onLargeImageClick }: ProductImageProps) {
         <Image imageIindex={productImagesActiveIndex} className={className} />
       )}
 
-      <div className={styles.thumbnailContainer}>
-        {images.map((image, index) => (
-          <button
-            onClick={() => setProductImagesActiveIndex(index)}
-            key={image.name}
-            className={`${styles.thumbnailButton} ${
-              index === productImagesActiveIndex ? styles.active : ''
-            }`}
-            type='button'
-          >
-            <div
-              id={image.name}
-              className={`${styles.overlay} ${
+      {!isMobile && (
+        <div className={styles.thumbnailContainer}>
+          {images.map((image, index) => (
+            <button
+              onClick={() => setProductImagesActiveIndex(index)}
+              key={image.name}
+              className={`${styles.thumbnailButton} ${
                 index === productImagesActiveIndex ? styles.active : ''
               }`}
-            />
-            <img
-              className={styles.thumbnail}
-              width={90}
-              height={90}
-              src={image.thumbnailImageUrl}
-              alt={image.name}
-            />
-          </button>
-        ))}
-      </div>
+              type='button'
+            >
+              <div
+                id={image.name}
+                className={`${styles.overlay} ${
+                  index === productImagesActiveIndex ? styles.active : ''
+                }`}
+              />
+              <img
+                className={styles.thumbnail}
+                src={image.thumbnailImageUrl}
+                alt={image.name}
+              />
+            </button>
+          ))}
+        </div>
+      )}
     </>
   )
 }

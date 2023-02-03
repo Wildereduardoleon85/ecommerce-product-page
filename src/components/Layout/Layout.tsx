@@ -1,10 +1,16 @@
 import { useContext } from 'react'
-import { Navbar, ProductDetail, ProductImageContainer, ProductModal } from '..'
+import {
+  Navbar,
+  ProductDetail,
+  ProductImageContainer,
+  ProductModal,
+  Cart,
+} from '..'
 import ProductContext from '../../context/ProductContext'
 
 function Layout() {
   const {
-    state: { isModalOpen },
+    state: { isModalOpen, showCart },
   } = useContext(ProductContext)
 
   return (
@@ -15,6 +21,7 @@ function Layout() {
         <ProductDetail />
       </main>
       {isModalOpen && <ProductModal />}
+      {showCart && <Cart />}
     </>
   )
 }
