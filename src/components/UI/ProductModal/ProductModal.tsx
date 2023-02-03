@@ -1,11 +1,28 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import styles from './productModal.module.css'
 import ProductContext from '../../../context/ProductContext'
 import { Portal } from '../../Portal'
 import { Carousel, CloseIcon } from '../..'
 
 function ProductModal() {
-  const { setIsModalOpen } = useContext(ProductContext)
+  const {
+    state: { isModalOpen },
+    setIsModalOpen,
+  } = useContext(ProductContext)
+
+  function escapeKeyHandler(e: globalThis.KeyboardEvent): void {
+    if (e.key === 'Escape' && isModalOpen) {
+      setIsModalOpen(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('keydown', escapeKeyHandler)
+
+    return () => {
+      window.removeEventListener('keydown', escapeKeyHandler)
+    }
+  }, [])
 
   function onBackdropClick() {
     setIsModalOpen(false)

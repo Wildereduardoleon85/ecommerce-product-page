@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import styles from './cart.module.css'
 import thumbnail from '../../assets/image-product-1-thumbnail.jpg'
 import { Button, DeleteIcon } from '..'
@@ -10,26 +10,12 @@ const { prize, discount } = product
 
 function Cart() {
   const {
-    state: { cartItems, showCart },
+    state: { cartItems },
     setCartItems,
     setShowCart,
   } = useContext(ProductContext)
   const isMobile = useMediaQuery()
   const isCartEmpty = cartItems === 0
-
-  function escapeKeyHandler(e: globalThis.KeyboardEvent): void {
-    if (e.key === 'Escape' && showCart) {
-      setShowCart(false)
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener('keydown', escapeKeyHandler)
-
-    return () => {
-      window.removeEventListener('keydown', escapeKeyHandler)
-    }
-  }, [])
 
   function onCartMouseOver() {
     setShowCart(true)

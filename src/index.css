@@ -45,3 +45,9 @@ main {
     display: block;
   }
 }
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}

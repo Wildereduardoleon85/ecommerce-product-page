@@ -12,6 +12,7 @@ const initialState: ProductState = {
   productImagesActiveIndex: 0,
   isModalOpen: false,
   showCart: false,
+  isSidebarOpen: false,
 }
 
 function ProductProvider({ children }: ProductProviderProps) {
@@ -45,6 +46,13 @@ function ProductProvider({ children }: ProductProviderProps) {
     })
   }
 
+  function setIsSidebarOpen(isSidebarOpen: boolean) {
+    dispatch({
+      type: 'setIsSidebarOpen',
+      payload: isSidebarOpen,
+    })
+  }
+
   const memoizedState = useMemo(
     () => ({
       state,
@@ -52,6 +60,7 @@ function ProductProvider({ children }: ProductProviderProps) {
       setIsModalOpen,
       setCartItems,
       setShowCart,
+      setIsSidebarOpen,
     }),
     [state, dispatch]
   )

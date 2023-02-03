@@ -8,6 +8,7 @@ export { Carousel } from './Carousel'
 // UI:
 export { Button } from './UI'
 export { ProductModal } from './UI'
+export { MenuSidebar } from './UI'
 // Icons:
 export { CartIcon } from './Icons'
 export { CloseIcon } from './Icons'

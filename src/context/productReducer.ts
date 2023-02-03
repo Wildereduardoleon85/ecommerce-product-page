@@ -5,6 +5,7 @@ type ProductAction =
   | { type: 'setIsModalOpen'; payload: boolean }
   | { type: 'setCartItems'; payload: number }
   | { type: 'setShowCart'; payload: boolean }
+  | { type: 'setIsSidebarOpen'; payload: boolean }
 
 function productReducer(
   state: ProductState,
@@ -33,6 +34,12 @@ function productReducer(
       return {
         ...state,
         showCart: action.payload,
+      }
+
+    case 'setIsSidebarOpen':
+      return {
+        ...state,
+        isSidebarOpen: action.payload,
       }
 
     default:

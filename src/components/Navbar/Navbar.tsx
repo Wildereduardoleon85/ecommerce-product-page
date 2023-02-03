@@ -11,6 +11,7 @@ function Navbar() {
   const {
     state: { cartItems, showCart },
     setShowCart,
+    setIsSidebarOpen,
   } = useContext(ProductContext)
   const isMobile = useMediaQuery()
 
@@ -26,11 +27,21 @@ function Navbar() {
     setShowCart(true)
   }
 
+  function onMenuClick() {
+    setIsSidebarOpen(true)
+  }
+
   return (
     <header className={styles.navbarContainer}>
       <nav>
-        <img src={menuIcon} alt='menu-icon' width={16} height={15} />
-        <img src={logo} alt='logo' width={138} height={20} />
+        <button
+          type='button'
+          className={styles.menuButton}
+          onClick={onMenuClick}
+        >
+          <img src={menuIcon} alt='menu-icon' width={16} height={15} />
+        </button>
+        <img src={logo} alt='logo' />
         <ul>
           <li>
             <button className={styles.menuItem} type='button'>
@@ -76,7 +87,7 @@ function Navbar() {
               {cartItems > 0 && <div>{String(cartItems)}</div>}
             </button>
           </div>
-          <img src={avatarIcon} alt='avatar-icon' width={50} height={50} />
+          <img className={styles.avatar} src={avatarIcon} alt='avatar-icon' />
         </div>
         {showCart && <Cart />}
       </nav>

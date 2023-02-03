@@ -9,6 +9,7 @@ export type ProductState = {
   isModalOpen: boolean
   cartItems: number
   showCart: boolean
+  isSidebarOpen: boolean
 }
 
 export type Product = {

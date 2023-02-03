@@ -7,6 +7,7 @@ type ProductContextProps = {
   setIsModalOpen: (isModalOpen: boolean) => void
   setCartItems: (items: number) => void
   setShowCart: (shouldShowCart: boolean) => void
+  setIsSidebarOpen: (isSidebarOpen: boolean) => void
 }
 
 const ProductContext = createContext({} as ProductContextProps)
