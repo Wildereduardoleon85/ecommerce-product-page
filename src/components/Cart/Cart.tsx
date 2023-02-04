@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import styles from './cart.module.css'
-import thumbnail from '../../assets/image-product-1-thumbnail.jpg'
+import thumbnail from '../../assets/image-product-1-thumbnail.webp'
 import { Button, DeleteIcon } from '..'
 import ProductContext from '../../context/ProductContext'
 import { product } from '../../constants'

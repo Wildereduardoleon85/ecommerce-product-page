@@ -21,7 +21,11 @@ function MenuSidebar() {
       <div
         className={`${styles.sidebar} ${isSidebarOpen ? styles.active : ''}`}
       >
-        <button type='button' onClick={() => setIsSidebarOpen(false)}>
+        <button
+          type='button'
+          onClick={() => setIsSidebarOpen(false)}
+          aria-label='close-button'
+        >
           <CloseIcon className={styles.closeIcon} />
         </button>
         <ul className={styles.list}>
