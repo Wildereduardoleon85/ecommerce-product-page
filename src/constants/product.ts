@@ -1,14 +1,12 @@
 import { Product } from '../types'
-import {
-  product1,
-  product2,
-  product3,
-  product4,
-  product1Thumbnail,
-  product2Thumbnail,
-  product3Thumbnail,
-  product4Thumbnail,
-} from '../assets'
+import product1 from '../assets/image-product-1.webp'
+import product1Thumbnail from '../assets/image-product-1-thumbnail.webp'
+import product2 from '../assets/image-product-2.webp'
+import product2Thumbnail from '../assets/image-product-2-thumbnail.webp'
+import product3 from '../assets/image-product-3.webp'
+import product3Thumbnail from '../assets/image-product-3-thumbnail.webp'
+import product4 from '../assets/image-product-4.webp'
+import product4Thumbnail from '../assets/image-product-4-thumbnail.webp'
 
 const product: Product = {
   prize: 250,
