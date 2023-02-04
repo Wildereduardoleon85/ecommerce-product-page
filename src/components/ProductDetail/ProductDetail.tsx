@@ -41,11 +41,15 @@ function ProductDetail() {
       </div>
       <div className={styles.buttonsGroup}>
         <div className={styles.counterButtons}>
-          <button type='button' onClick={onItemsToRemove}>
+          <button
+            type='button'
+            onClick={onItemsToRemove}
+            aria-label='minus-button'
+          >
             <MinusIcon className={styles.minusIcon} />
           </button>
           <div>{String(itemsToAdd)}</div>
-          <button type='button' onClick={onItemsToAdd}>
+          <button type='button' onClick={onItemsToAdd} aria-label='plus-button'>
             <PlusIcon className={styles.plusIcon} />
           </button>
         </div>

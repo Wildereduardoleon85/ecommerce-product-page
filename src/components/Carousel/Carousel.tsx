@@ -33,6 +33,7 @@ function Carousel({ className, closeButton }: CarouselProps) {
       <button
         onClick={onPrevImageClick}
         type='button'
+        aria-label='prev-button'
         className={`${styles.IconButton} ${styles.prev}`}
       >
         <PrevIcon className={styles.chevronIcon} />
@@ -40,6 +41,7 @@ function Carousel({ className, closeButton }: CarouselProps) {
       <button
         onClick={onNextImageClick}
         type='button'
+        aria-label='next-button'
         className={`${styles.IconButton} ${styles.next}`}
       >
         <NextIcon className={styles.chevronIcon} />
