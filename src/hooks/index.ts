@@ -1,2 +1,2 @@
-/* eslint-disable import/prefer-default-export */
 export { default as useMediaQuery } from './useMediaQuery'
+export { default as useModal } from './useModal'

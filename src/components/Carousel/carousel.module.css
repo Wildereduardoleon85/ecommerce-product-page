@@ -18,6 +18,11 @@
   top: calc(600px / 2 - (50px / 2));
 }
 
+.IconButton:focus-visible {
+  outline: 2px solid var(--veryDarkBlue);
+  background-color: var(--grayishBlue);
+}
+
 .next {
   right: -25px;
 }
