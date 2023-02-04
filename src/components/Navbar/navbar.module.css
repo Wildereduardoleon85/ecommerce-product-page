@@ -130,10 +130,6 @@
   fill: var(--veryDarkBlue);
 }
 
-.avatar {
-  width: 50px;
-}
-
 @media (max-width: 1140px) {
   .navbarContainer nav {
     padding: 0 1rem;
@@ -157,6 +153,7 @@
 @media (max-width: 480px) {
   .avatar {
     width: 33px;
+    height: 33px;
   }
 }
 

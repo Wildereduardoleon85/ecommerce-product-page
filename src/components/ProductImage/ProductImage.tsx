@@ -20,6 +20,8 @@ function Image({ imageIindex, className }: ImageProps) {
   return (
     <img
       className={`${styles.largeImage} ${className || ''}`}
+      width={450}
+      height={450}
       src={images[imageIindex].largeImageUrl}
       alt={images[imageIindex].name}
     />

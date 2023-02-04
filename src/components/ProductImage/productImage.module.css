@@ -3,8 +3,6 @@
   transition-property: all;
   transition-duration: var(--tduration);
   transition-timing-function: var(--ttfunction);
-  width: 450px;
-  height: 450px;
   vertical-align: bottom;
 }
 

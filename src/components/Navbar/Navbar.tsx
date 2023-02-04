@@ -74,7 +74,6 @@ function Navbar() {
             className={styles.popper}
             onMouseEnter={isMobile ? () => null : onCartMouseOver}
             onMouseLeave={isMobile ? () => null : onCartMouseLeave}
-            aria-hidden
           >
             <button
               type='button'
@@ -87,7 +86,13 @@ function Navbar() {
               {cartItems > 0 && <div>{String(cartItems)}</div>}
             </button>
           </div>
-          <img className={styles.avatar} src={avatarIcon} alt='avatar-icon' />
+          <img
+            width={50}
+            height={50}
+            className={styles.avatar}
+            src={avatarIcon}
+            alt='avatar-icon'
+          />
         </div>
         {showCart && <Cart />}
       </nav>
