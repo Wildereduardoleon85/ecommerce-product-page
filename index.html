@@ -7,13 +7,19 @@
       type="image/svg+xml"
       href="/src/assets/favicon-32x32.png"
     />
-    <link rel="DNS-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap"
+        rel="stylesheet"
+        type="text/css"
+      />
+    </noscript>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
